@@ -1,0 +1,22 @@
+# Dependências
+node_modules/
+
+# Build (o arquivo standalone/salao-premium.html é versionado de propósito)
+dist/
+*.tsbuildinfo
+
+# Variáveis de ambiente (o .env.example é versionado de propósito)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor e sistema
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db

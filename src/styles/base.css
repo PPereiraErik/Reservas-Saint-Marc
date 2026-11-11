@@ -1,0 +1,251 @@
+/* ==========================================================================
+   Base: variáveis de tema, reset e tipografia
+   ========================================================================== */
+
+/*
+ * Paleta tirada da fachada do condomínio: branco, cinza-esverdeado das faixas
+ * e um verde-petróleo como única cor de destaque (botões e seleção).
+ */
+:root {
+  --font-display: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f5f4;
+  --color-text: #1d2624;
+  --color-muted: #646f6c;
+  --color-border: #e1e6e4;
+  --color-border-strong: #c3cbc8;
+
+  --color-primary: #155e63;
+  --color-primary-hover: #0f4b50;
+  --color-primary-strong: #0c3b3e;
+  --color-primary-soft: #e4efef;
+  --color-on-primary: #ffffff;
+
+  /* Cinza-esverdeado das faixas da fachada */
+  --color-facade: #8e9c98;
+  --color-facade-soft: #e3e9e7;
+
+  /* Cores de status (fundo, texto, ponto) */
+  --pendente-bg: #fcf0d4;
+  --pendente-text: #7a5300;
+  --pendente-dot: #d99a12;
+  --aprovada-bg: #dcefe6;
+  --aprovada-text: #12573a;
+  --aprovada-dot: #229561;
+  --rejeitada-bg: #fae2df;
+  --rejeitada-text: #98291f;
+  --rejeitada-dot: #d6473a;
+  --cancelada-bg: #eaedf0;
+  --cancelada-text: #4a5462;
+  --cancelada-dot: #8a94a3;
+
+  --color-danger: #b42318;
+  --color-focus: #155e63;
+
+  /* Ilustração do banner */
+  --art-sky-top: #d6e4e2;
+  --art-sky-bottom: #f1f5f4;
+  --art-wall: #f2f4f3;
+  --art-column: #8e9c98;
+  --art-window: #c6d4d2;
+  --art-frame: #f2f4f3;
+  --art-balcony: #5a6a67;
+  --art-roof: #d3d9d6;
+  --art-trim: #ffffff;
+  --art-trunk: #8b7d68;
+  --art-leaf: #6c8d68;
+  --art-fence: #ffffff;
+  --art-wall-low: #cdd4d1;
+  --art-hedge: #4d6c4a;
+  --art-ground: #e2e7e5;
+
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 2px rgb(29 38 36 / 0.08);
+  --shadow: 0 6px 20px rgb(29 38 36 / 0.1);
+  --shadow-lg: 0 18px 50px -12px rgb(29 38 36 / 0.3);
+
+  --header-height: 72px;
+  --tabbar-height: 64px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-bg: #111716;
+  --color-surface: #182120;
+  --color-surface-2: #1f2a28;
+  --color-text: #e8eeec;
+  --color-muted: #9eaba7;
+  --color-border: #2b3735;
+  --color-border-strong: #3f4c4a;
+
+  --color-primary: #6cbab6;
+  --color-primary-hover: #86c9c5;
+  --color-primary-strong: #0c3b3e;
+  --color-primary-soft: #1b3333;
+  --color-on-primary: #04201f;
+
+  --color-facade: #7d8c88;
+  --color-facade-soft: #26312f;
+
+  --pendente-bg: #3a2d10;
+  --pendente-text: #f2cb72;
+  --pendente-dot: #e8b13a;
+  --aprovada-bg: #113526;
+  --aprovada-text: #7ddcb0;
+  --aprovada-dot: #3cc387;
+  --rejeitada-bg: #3c1916;
+  --rejeitada-text: #f2998f;
+  --rejeitada-dot: #e3665a;
+  --cancelada-bg: #252c33;
+  --cancelada-text: #b8c1cb;
+  --cancelada-dot: #7d8896;
+
+  --color-danger: #f2877b;
+  --color-focus: #86c9c5;
+
+  --art-sky-top: #1b2b2b;
+  --art-sky-bottom: #243231;
+  --art-wall: #c4ccc9;
+  --art-column: #6a7975;
+  --art-window: #8ea2a0;
+  --art-frame: #c4ccc9;
+  --art-balcony: #3b4947;
+  --art-roof: #a6b0ad;
+  --art-trim: #d3d9d7;
+  --art-trunk: #6a5f50;
+  --art-leaf: #4a6846;
+  --art-fence: #b7c0bd;
+  --art-wall-low: #394543;
+  --art-hedge: #33503a;
+  --art-ground: #283331;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow: 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 24px 60px -20px rgb(0 0 0 / 0.8);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+body.no-scroll,
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.modal-aberto {
+  overflow: hidden;
+}

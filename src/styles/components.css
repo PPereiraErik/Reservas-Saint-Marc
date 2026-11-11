@@ -1,0 +1,1385 @@
+/* ==========================================================================
+   Componentes reutilizáveis
+   ========================================================================== */
+
+/* ---------- Botões ---------- */
+
+.button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s,
+    transform 0.15s var(--ease),
+    box-shadow 0.15s;
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.55;
+}
+
+.button--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.button--secondary {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.button--secondary:hover:not(:disabled) {
+  border-color: var(--color-text);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: var(--color-surface-2);
+}
+
+.button--success {
+  background: var(--aprovada-dot);
+  color: #fff;
+}
+
+[data-theme="dark"] .button--success {
+  color: #05201a;
+}
+
+.button--success:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.button--danger {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+[data-theme="dark"] .button--danger {
+  color: #2a0905;
+}
+
+.button--ghost-danger {
+  background: transparent;
+  color: var(--color-danger);
+}
+
+.button--ghost-danger:hover:not(:disabled) {
+  background: var(--rejeitada-bg);
+}
+
+.button--sm {
+  min-height: 36px;
+  padding: 7px 12px;
+  font-size: 0.875rem;
+}
+
+.button--lg {
+  min-height: 52px;
+  padding: 12px 24px;
+  font-size: 1rem;
+}
+
+.button--block {
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button-row--stretch > * {
+  flex: 1 1 160px;
+}
+
+.icon-button {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.icon-button:hover:not(:disabled) {
+  background: var(--color-surface-2);
+}
+
+.icon-button:disabled {
+  opacity: 0.35;
+}
+
+.icon-button--outline {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+
+.icon-button--round {
+  border-color: var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+}
+
+.icon-button--round:hover:not(:disabled) {
+  border-color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.icon-button--sm {
+  width: 32px;
+  height: 32px;
+}
+
+.link,
+.link-button {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 0.9rem;
+}
+
+/* ---------- Formulários ---------- */
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.form__section {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form__section legend {
+  margin-bottom: 12px;
+  padding: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form__hint {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* bottom negativo = padding do .modal__body, para colar na borda do modal */
+.form__footer {
+  position: sticky;
+  bottom: -20px;
+  display: flex;
+  gap: 10px;
+  margin: 4px -20px -20px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.form__footer .button {
+  flex: 1;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field__hint {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.field__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.field__error svg {
+  margin-top: 3px;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 10px;
+  background: var(--color-surface);
+  font-size: 1rem; /* 16px evita zoom automático no iPhone */
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+textarea.input {
+  resize: vertical;
+}
+
+.input:hover {
+  border-color: var(--color-text);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.input::placeholder {
+  color: color-mix(in srgb, var(--color-muted) 75%, transparent);
+}
+
+/* ---------- Cards, avisos e badges ---------- */
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.card--flush {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card__title {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge--pendente {
+  background: var(--pendente-bg);
+  color: var(--pendente-text);
+}
+
+.badge--aprovada {
+  background: var(--aprovada-bg);
+  color: var(--aprovada-text);
+}
+
+.badge--rejeitada {
+  background: var(--rejeitada-bg);
+  color: var(--rejeitada-text);
+}
+
+.badge--cancelada {
+  background: var(--cancelada-bg);
+  color: var(--cancelada-text);
+}
+
+.notice {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.notice > svg {
+  margin-top: 2px;
+}
+
+.notice__title {
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.notice__list {
+  display: grid;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.notice .button-row {
+  margin-top: 12px;
+}
+
+.notice--warning {
+  background: var(--pendente-bg);
+  color: var(--pendente-text);
+}
+
+.notice--warning .muted {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.notice--danger {
+  background: var(--rejeitada-bg);
+  color: var(--rejeitada-text);
+}
+
+.notice--info {
+  background: var(--color-primary-soft);
+  color: var(--color-text);
+}
+
+.notice--info > svg {
+  color: var(--color-primary);
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: none;
+}
+
+.chip {
+  display: inline-flex;
+  flex-shrink: 0;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.chip:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.chip.is-active {
+  border-color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.chip__count {
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.chip.is-active .chip__count {
+  background: rgb(255 255 255 / 0.2);
+  color: inherit;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 16px;
+  margin: 0;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  font-size: 0.925rem;
+}
+
+.summary dt {
+  color: var(--color-muted);
+}
+
+.summary dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.date-chip {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  place-content: center;
+  border-radius: 12px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  text-align: center;
+  line-height: 1;
+}
+
+.date-chip__month {
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.date-chip__day {
+  margin-top: 3px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* ---------- Estados (carregando, vazio, erro) ---------- */
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.state__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+}
+
+.state__icon--error {
+  background: var(--rejeitada-bg);
+  color: var(--rejeitada-text);
+}
+
+.state__title {
+  font-weight: 700;
+}
+
+.state__text {
+  max-width: 380px;
+  color: var(--color-muted);
+  font-size: 0.925rem;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--color-primary-soft);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner--sm {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+  border-color: rgb(255 255 255 / 0.35);
+  border-top-color: currentColor;
+}
+
+/* ---------- Avisos flutuantes (toast) ---------- */
+
+.toast-region {
+  position: fixed;
+  right: 12px;
+  bottom: calc(var(--tabbar-height) + 12px);
+  left: 12px;
+  z-index: 200;
+  display: grid;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 10px 12px 14px;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  animation: toast-in 0.3s var(--ease);
+}
+
+.toast > svg {
+  margin-top: 2px;
+}
+
+.toast--success {
+  border-left-color: var(--aprovada-dot);
+}
+
+.toast--success > svg {
+  color: var(--aprovada-dot);
+}
+
+.toast--error {
+  border-left-color: var(--rejeitada-dot);
+}
+
+.toast--error > svg {
+  color: var(--rejeitada-dot);
+}
+
+.toast__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast__title {
+  font-weight: 700;
+  font-size: 0.925rem;
+}
+
+.toast__description {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .toast-region {
+    top: calc(var(--header-height) + 12px);
+    right: 16px;
+    bottom: auto;
+    left: auto;
+    width: 380px;
+  }
+}
+
+/* ---------- Modal (painel inferior no celular) ---------- */
+
+.modal {
+  width: 100%;
+  max-width: 100%;
+  max-height: 92vh;
+  margin: auto 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 20px 20px 0 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.modal[open] {
+  display: flex;
+  animation: sheet-in 0.3s var(--ease);
+}
+
+.modal::backdrop {
+  background: rgb(4 20 15 / 0.55);
+  animation: fade-in 0.2s ease;
+}
+
+.modal__body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.modal__title {
+  font-size: 1.3rem;
+}
+
+.modal__description {
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .modal {
+    width: min(560px, calc(100% - 32px));
+    max-height: 88vh;
+    margin: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal[open] {
+    animation: modal-in 0.25s var(--ease);
+  }
+
+  .modal__body {
+    padding: 24px;
+  }
+
+  .form__footer {
+    bottom: -24px;
+    margin: 4px -24px -24px;
+    padding: 16px 24px;
+  }
+}
+
+/* ---------- Confirmação de reserva ---------- */
+
+.success {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.success__icon {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--aprovada-bg);
+  color: var(--aprovada-text);
+  animation: pop 0.45s var(--ease);
+}
+
+.success__title {
+  font-size: 1.4rem;
+}
+
+.success__text {
+  max-width: 380px;
+  color: var(--color-muted);
+}
+
+.success .summary {
+  width: 100%;
+  text-align: left;
+}
+
+.success .button-row {
+  width: 100%;
+}
+
+/* ---------- Detalhes da reserva ---------- */
+
+.details {
+  display: grid;
+  gap: 16px;
+}
+
+.details__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+.details__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ---------- Calendário ---------- */
+
+.calendar {
+  position: relative;
+}
+
+.calendar__nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.calendar__nav > * {
+  pointer-events: auto;
+}
+
+.calendar__nav > :first-child {
+  margin-right: auto;
+}
+
+.calendar__months {
+  display: grid;
+  gap: 32px;
+}
+
+.calendar--double .calendar__months {
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.calendar__title {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.calendar__weekdays,
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar__weekdays {
+  padding-bottom: 8px;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.calendar__grid {
+  row-gap: 2px;
+  animation: fade-in 0.2s ease;
+}
+
+/* Dia (calendário dos moradores): círculo, faixa contínua no intervalo. */
+
+.day-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.day-cell.is-in-range {
+  background: var(--color-surface-2);
+}
+
+.day-cell.is-range-start {
+  background: linear-gradient(to right, transparent 50%, var(--color-surface-2) 50%);
+}
+
+.day-cell.is-range-end {
+  background: linear-gradient(to left, transparent 50%, var(--color-surface-2) 50%);
+}
+
+.day {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 46px;
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 0.12s, background-color 0.12s;
+}
+
+.day:hover:not(:disabled) {
+  border-color: var(--color-text);
+}
+
+.day:disabled {
+  color: var(--color-muted);
+  opacity: 0.5;
+}
+
+.day--lotado:disabled:not(.day--past) .day__number {
+  text-decoration: line-through;
+}
+
+.day--today .day__number {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.day.is-selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.day__mark {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-facade);
+  transform: translateX(-50%);
+}
+
+.day.is-selected .day__mark {
+  background: currentColor;
+}
+
+/* Dia (painel administrativo): célula com status e horários. */
+
+.calendar--admin .calendar__grid {
+  gap: 4px;
+}
+
+.admin-day {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  aspect-ratio: 1;
+  min-height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.admin-day:hover {
+  border-color: var(--color-border-strong);
+}
+
+.admin-day__number {
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-day--pendente {
+  background: color-mix(in srgb, var(--pendente-bg) 70%, transparent);
+}
+
+.admin-day--aprovada {
+  background: color-mix(in srgb, var(--aprovada-bg) 75%, transparent);
+}
+
+.admin-day--past {
+  color: var(--color-muted);
+  opacity: 0.6;
+}
+
+.admin-day--today .admin-day__number {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 700;
+}
+
+.admin-day.is-selected {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+
+.admin-day__dots {
+  display: flex;
+  gap: 3px;
+}
+
+.dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.dot--livre {
+  border: 1.5px solid var(--color-muted);
+}
+
+.dot--pendente {
+  background: var(--pendente-dot);
+}
+
+.dot--aprovada {
+  background: var(--aprovada-dot);
+}
+
+.dot--rejeitada {
+  background: var(--rejeitada-dot);
+}
+
+.dot--cancelada {
+  background: var(--cancelada-dot);
+}
+
+.admin-day__events {
+  display: none;
+}
+
+.event {
+  display: block;
+  overflow: hidden;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event--pendente {
+  background: var(--pendente-bg);
+  color: var(--pendente-text);
+}
+
+.event--aprovada {
+  background: var(--aprovada-bg);
+  color: var(--aprovada-text);
+}
+
+.event--rejeitada {
+  background: var(--rejeitada-bg);
+  color: var(--rejeitada-text);
+  text-decoration: line-through;
+}
+
+.event--cancelada {
+  background: var(--cancelada-bg);
+  color: var(--cancelada-text);
+  text-decoration: line-through;
+}
+
+.event--more {
+  color: var(--color-muted);
+}
+
+/* Legenda */
+
+.calendar__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.82rem;
+}
+
+.calendar__legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-day {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: 50%;
+}
+
+.legend-day--parcial {
+  background: radial-gradient(circle at 50% 78%, var(--color-facade) 0 2px, transparent 2.5px);
+}
+
+.legend-day--lotado {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--color-muted), var(--color-muted)) center / 10px 1.5px no-repeat,
+    var(--color-surface-2);
+}
+
+@media (min-width: 640px) {
+  .calendar--admin:not(.calendar--compact) .admin-day {
+    aspect-ratio: auto;
+    min-height: 92px;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 8px;
+  }
+
+  .calendar--admin:not(.calendar--compact) .admin-day__dots {
+    display: none;
+  }
+
+  .calendar--admin:not(.calendar--compact) .admin-day__events {
+    display: grid;
+    gap: 3px;
+    margin-top: auto;
+  }
+
+  .calendar--admin .admin-day--today .admin-day__number {
+    margin-left: -3px;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    transform: translateY(10px) scale(0.98);
+    opacity: 0;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+  }
+}
+
+/* Convite para avisar o morador depois de aprovar/rejeitar/cancelar. */
+.aviso__texto {
+  margin: 6px 0 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  white-space: pre-wrap;
+}
+
+/* Regras do salão, aceite, agenda e lista de espera. */
+.regras {
+  margin: 0 0 12px;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 6px;
+  color: var(--color-text-muted, inherit);
+}
+
+.regras-home {
+  padding: 14px 18px;
+}
+
+.regras-home summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.regras-home .regras {
+  margin: 12px 0 0;
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.check input {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  margin: 0;
+  accent-color: var(--color-primary);
+}
+
+.check--error span {
+  color: var(--color-danger, #b3261e);
+}
+
+.agenda {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 8px;
+}
+
+.agenda__titulo {
+  margin: 0;
+  font-weight: 700;
+}
+
+.agenda__botoes {
+  display: grid;
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .agenda__botoes {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.booking__waitlist {
+  margin-top: 8px;
+}
+
+.espera {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 14px);
+  background: var(--color-surface);
+}
+
+.espera__titulo {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.espera__lista {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.espera__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+
+.espera__info {
+  display: grid;
+}
+
+.espera__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Datas bloqueadas (administração). */
+.bloqueio-form {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+@media (min-width: 720px) {
+  .bloqueio-form {
+    grid-template-columns: 1fr 1fr 2fr auto;
+    align-items: end;
+  }
+}
+
+.bloqueio-lista {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bloqueio-lista li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Plano B para navegadores sem <dialog>.showModal(): cobre a tela com fundo escurecido. */
+.modal--simples[open] {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  border: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.modal--simples[open] .modal__body {
+  margin: 8vh auto 0;
+  max-width: 560px;
+  min-height: 60vh;
+  background: var(--color-surface, #fff);
+  color: var(--color-text);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Voltar ao início (página de reserva) e rolagem até os períodos no celular. */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.booking {
+  scroll-margin-top: 84px;
+}
+
+/* Cadastro do morador */
+.cadastro-card {
+  display: grid;
+  gap: 16px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+}
+
+.segmented__item {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.segmented__item.is-active {
+  background: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.conta-dados {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.conta-dados > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.conta-dados dt {
+  color: var(--color-muted);
+}
+
+.conta-dados dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.form__aviso {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.form__aviso a {
+  font-weight: 600;
+}

@@ -1,0 +1,374 @@
+/* ==========================================================================
+   Temas de datas comemorativas (gerado a partir da paleta; veja src/temas/eventos.ts)
+   O JavaScript só escreve data-evento="<id>" no <html>. Aqui as cores mudam.
+   Desligam sozinhos com "Alto contraste" ou com a opção "Decorações" desligada no painel.
+   Todas as paletas têm contraste mínimo de 4,5:1 (texto/botões) conferido.
+   Cores de status das reservas NÃO mudam em nenhum tema.
+   ========================================================================== */
+
+html[data-evento="natal"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #9b1c2c;
+  --color-primary-hover: #7e1623;
+  --color-primary-strong: #5f101a;
+  --color-primary-soft: #fbe9e9;
+  --color-focus: #9b1c2c;
+  --evento-faixa: #1f6b3a;
+  --evento-faixa-texto: #ffffff;
+  --evento-m1: #c0392b;
+  --evento-m2: #1f6b3a;
+  --evento-m3: #d4a72c;
+}
+html[data-theme="dark"][data-evento="natal"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #f2909b;
+  --color-primary-hover: #f6aab3;
+  --color-primary-soft: #3a1a1e;
+  --color-focus: #f2909b;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="ano-novo"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #26396b;
+  --color-primary-hover: #1b2a52;
+  --color-primary-strong: #121c3a;
+  --color-primary-soft: #e8ecf7;
+  --color-focus: #26396b;
+  --evento-faixa: #1b1f3b;
+  --evento-faixa-texto: #ffe9a8;
+  --evento-m1: #d4a72c;
+  --evento-m2: #f4d675;
+  --evento-m3: #8fa3d9;
+}
+html[data-theme="dark"][data-evento="ano-novo"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #a9bbf0;
+  --color-primary-hover: #c3d0f6;
+  --color-primary-soft: #1a2240;
+  --color-focus: #a9bbf0;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="carnaval"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #6a2c91;
+  --color-primary-hover: #55227a;
+  --color-primary-strong: #40195d;
+  --color-primary-soft: #f1e8f8;
+  --color-focus: #6a2c91;
+  --evento-faixa: #f2b705;
+  --evento-faixa-texto: #2b1a00;
+  --evento-m1: #e4572e;
+  --evento-m2: #6a2c91;
+  --evento-m3: #17a398;
+}
+html[data-theme="dark"][data-evento="carnaval"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #d2a6f0;
+  --color-primary-hover: #e0c0f6;
+  --color-primary-soft: #2a1a38;
+  --color-focus: #d2a6f0;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="pascoa"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #6b3fa0;
+  --color-primary-hover: #563285;
+  --color-primary-strong: #42266a;
+  --color-primary-soft: #efe7f8;
+  --color-focus: #6b3fa0;
+  --evento-faixa: #f7d46b;
+  --evento-faixa-texto: #3b2f00;
+  --evento-m1: #d9468f;
+  --evento-m2: #f7d46b;
+  --evento-m3: #6bbf9a;
+}
+html[data-theme="dark"][data-evento="pascoa"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #cdb0ee;
+  --color-primary-hover: #dcc7f4;
+  --color-primary-soft: #2b1d3d;
+  --color-focus: #cdb0ee;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="maes"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #a3295f;
+  --color-primary-hover: #821f4b;
+  --color-primary-strong: #641739;
+  --color-primary-soft: #fbe6ef;
+  --color-focus: #a3295f;
+  --evento-faixa: #a3295f;
+  --evento-faixa-texto: #ffffff;
+  --evento-m1: #d6336c;
+  --evento-m2: #f783ac;
+  --evento-m3: #a3295f;
+}
+html[data-theme="dark"][data-evento="maes"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #f5a3c4;
+  --color-primary-hover: #f8bcd4;
+  --color-primary-soft: #3a1a27;
+  --color-focus: #f5a3c4;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="junina"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #b3460f;
+  --color-primary-hover: #8f380c;
+  --color-primary-strong: #702d0a;
+  --color-primary-soft: #fdebd9;
+  --color-focus: #b3460f;
+  --evento-faixa: #f2b134;
+  --evento-faixa-texto: #2d1700;
+  --evento-m1: #c0392b;
+  --evento-m2: #f2b134;
+  --evento-m3: #2f7d4b;
+}
+html[data-theme="dark"][data-evento="junina"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #f4a86f;
+  --color-primary-hover: #f7bd8e;
+  --color-primary-soft: #3a2415;
+  --color-focus: #f4a86f;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="pais"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #1c4e89;
+  --color-primary-hover: #153d6d;
+  --color-primary-strong: #0f2f55;
+  --color-primary-soft: #e5eefa;
+  --color-focus: #1c4e89;
+  --evento-faixa: #0f2f55;
+  --evento-faixa-texto: #ffffff;
+  --evento-m1: #1c4e89;
+  --evento-m2: #6aa5d9;
+  --evento-m3: #f2b134;
+}
+html[data-theme="dark"][data-evento="pais"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #9cc4ee;
+  --color-primary-hover: #b8d4f3;
+  --color-primary-soft: #172a40;
+  --color-focus: #9cc4ee;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="independencia"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #0b6b3a;
+  --color-primary-hover: #08552e;
+  --color-primary-strong: #064022;
+  --color-primary-soft: #e0f3e8;
+  --color-focus: #0b6b3a;
+  --evento-faixa: #f2c200;
+  --evento-faixa-texto: #14301f;
+  --evento-m1: #0b6b3a;
+  --evento-m2: #f2c200;
+  --evento-m3: #1d4ed8;
+}
+html[data-theme="dark"][data-evento="independencia"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #7fdcaa;
+  --color-primary-hover: #a2e8c2;
+  --color-primary-soft: #14301f;
+  --color-focus: #7fdcaa;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="criancas"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #1769aa;
+  --color-primary-hover: #12548a;
+  --color-primary-strong: #0d4068;
+  --color-primary-soft: #e2f0fb;
+  --color-focus: #1769aa;
+  --evento-faixa: #ff9f1c;
+  --evento-faixa-texto: #2b1600;
+  --evento-m1: #e63946;
+  --evento-m2: #ff9f1c;
+  --evento-m3: #1769aa;
+}
+html[data-theme="dark"][data-evento="criancas"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #8fc6f2;
+  --color-primary-hover: #aed6f5;
+  --color-primary-soft: #152a3c;
+  --color-focus: #8fc6f2;
+  --color-on-primary: #04201f;
+}
+
+html[data-evento="halloween"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #b34700;
+  --color-primary-hover: #8f3900;
+  --color-primary-strong: #702d00;
+  --color-primary-soft: #fdeadb;
+  --color-focus: #b34700;
+  --evento-faixa: #2b1740;
+  --evento-faixa-texto: #ffd9b3;
+  --evento-m1: #e8670a;
+  --evento-m2: #7b3fb3;
+  --evento-m3: #2b1740;
+}
+html[data-theme="dark"][data-evento="halloween"]:not([data-a11y-contrast]):not([data-a11y-decor]) {
+  --color-primary: #f5a56b;
+  --color-primary-hover: #f8bb8c;
+  --color-primary-soft: #3a2212;
+  --color-focus: #f5a56b;
+  --color-on-primary: #04201f;
+}
+
+/* ---------- Faixa de mensagem (acima do cabeçalho) ---------- */
+.evento-faixa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 8px 16px;
+  background: var(--evento-faixa, var(--color-primary-strong));
+  color: var(--evento-faixa-texto, #ffffff);
+  font-size: 0.9rem;
+  font-weight: 650;
+  text-align: center;
+}
+
+.evento-faixa__motivos {
+  display: none;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .evento-faixa__motivos {
+    display: inline-flex;
+  }
+}
+
+/* ---------- Desenhos ---------- */
+.motivo {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.motivo--cor1 {
+  color: var(--evento-m1);
+}
+.motivo--cor2 {
+  color: var(--evento-m2);
+}
+.motivo--cor3 {
+  color: var(--evento-m3);
+}
+
+/* Na faixa, os desenhos usam a cor do texto da faixa, que sempre contrasta com o fundo. */
+.evento-faixa .motivo {
+  color: var(--evento-faixa-texto, #ffffff);
+}
+
+/* ---------- Canto da foto ---------- */
+.evento-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.evento-decor__item {
+  position: absolute;
+  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 0.35)) drop-shadow(0 0 1.5px rgb(255 255 255 / 0.9));
+  animation: evento-flutua 5s ease-in-out infinite;
+}
+
+.evento-decor__item .motivo {
+  width: 100%;
+  height: 100%;
+}
+
+.evento-decor__destaque {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  color: #ffe9a8;
+  font-size: clamp(2.4rem, 9vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 0.55);
+}
+
+@keyframes evento-flutua {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--giro, 0deg));
+  }
+  50% {
+    transform: translateY(-6px) rotate(var(--giro, 0deg));
+  }
+}
+
+/* ---------- Quando o tema não deve aparecer ---------- */
+html[data-a11y-decor="off"] .evento-faixa,
+html[data-a11y-decor="off"] .evento-decor,
+html[data-a11y-contrast] .evento-decor,
+html[data-a11y-contrast] .evento-faixa__motivos {
+  display: none;
+}
+
+/* Faixa discreta quando o contraste alto está ligado */
+html[data-a11y-contrast] .evento-faixa {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* ---------- Arte do Canva (telas largas) ----------
+   A arte foi desenhada para o topo da página na largura máxima (conteúdo de 1056 px, a partir de
+   1184 px de tela), com o texto começando no alto do bloco. Por isso ela só aparece nessa largura
+   e o texto é alinhado ao topo: assim cada peça cai exatamente onde foi desenhada.
+   Em telas menores a arte some por inteiro (nada fica solto ou sobre o texto). */
+
+.evento-arte {
+  display: none;
+}
+
+/* Com arte do Canva, os enfeites simples em SVG nunca aparecem. */
+.evento-decor--tem-arte {
+  display: none;
+}
+
+@media (min-width: 1184px) {
+  /* Sem z-index no contêiner: cada peça se ordena junto com o texto da página. */
+  .evento-arte {
+    position: absolute;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+  }
+
+  .evento-arte img {
+    position: absolute;
+    z-index: 2;
+    max-width: none;
+    user-select: none;
+  }
+
+  /* Peças que espiam por trás do texto, dos botões e das datas. */
+  .evento-arte img.evento-arte__atras {
+    z-index: 0;
+  }
+
+  /* As datas ficam opacas: o enfeite espia por trás delas, sem aparecer através do texto. */
+  html[data-arte] .date-pill {
+    background: var(--color-surface);
+  }
+
+  /* A guirlanda do Natal fica logo abaixo do botão: as datas descem para não ficarem por cima dela. */
+  html[data-arte="natal"] .quick-dates {
+    margin-top: 22px;
+  }
+
+  html[data-arte] .hero__text > :not(.evento-arte) {
+    position: relative;
+    z-index: 1;
+  }
+
+  html[data-arte] .hero__text {
+    align-content: start;
+  }
+
+  html[data-arte] body {
+    overflow-x: clip;
+  }
+}
+
+html[data-a11y-decor="off"] .evento-arte,
+html[data-a11y-contrast] .evento-arte {
+  display: none;
+}

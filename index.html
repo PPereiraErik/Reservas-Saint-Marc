@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservas Saint-Marc | Salão de festas do condomínio</title>
+    <meta
+      name="description"
+      content="Veja os dias livres e reserve o salão de festas do Condomínio Saint-Marc: manhã, tarde, noite, dia todo ou vários dias seguidos."
+    />
+    <meta name="theme-color" content="#155e63" />
+    <meta name="application-name" content="Saint-Marc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Saint-Marc" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Reservas Saint-Marc" />
+    <meta property="og:description" content="Veja os dias livres e reserve o salão de festas do condomínio." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fontes opcionais: sem internet, o sistema usa as fontes padrão do aparelho. -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
+    />
+    <script>
+      // Aplica o tema salvo antes de desenhar a página (evita "piscar" o tema claro).
+      try {
+        var tema = localStorage.getItem("reservas-saint-marc:tema");
+        if (tema === "dark" || (!tema && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Ative o JavaScript para usar o Reservas Saint-Marc.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

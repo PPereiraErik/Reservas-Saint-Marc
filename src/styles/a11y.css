@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Acessibilidade: opções do painel (src/hooks/useA11y.ts → atributos no <html>)
+   Este arquivo vem por último de propósito: as escolhas da pessoa vencem os temas de data.
+   ========================================================================== */
+
+/* ---------- painel ---------- */
+.a11y {
+  display: grid;
+  gap: 4px;
+}
+
+.a11y__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.a11y__row:first-child {
+  border-top: 0;
+}
+
+.a11y__text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.a11y__label {
+  font-weight: 600;
+}
+
+.a11y__hint {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.a11y__scale {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.a11y__value {
+  min-width: 3.2ch;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.a11y__switch {
+  position: relative;
+  flex: none;
+  width: 48px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-border-strong);
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.a11y__switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s var(--ease);
+}
+
+.a11y__switch[aria-checked="true"] {
+  background: var(--color-primary);
+}
+
+.a11y__switch[aria-checked="true"]::after {
+  transform: translateX(20px);
+}
+
+.a11y .button--block {
+  margin-top: 10px;
+}
+
+/* ---------- tamanho do texto ---------- */
+html {
+  font-size: calc(100% * var(--a11y-scale, 1));
+}
+
+/* ---------- reduzir animações (igual à preferência do sistema) ---------- */
+html[data-a11y-motion="reduce"] {
+  scroll-behavior: auto;
+}
+html[data-a11y-motion="reduce"] *,
+html[data-a11y-motion="reduce"] *::before,
+html[data-a11y-motion="reduce"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ---------- alto contraste ---------- */
+html[data-a11y-contrast] {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f0f0f0;
+  --color-text: #000000;
+  --color-muted: #1a1a1a;
+  --color-border: #000000;
+  --color-border-strong: #000000;
+  --color-primary: #003b3f;
+  --color-primary-hover: #00272a;
+  --color-primary-strong: #00191b;
+  --color-primary-soft: #e3eeee;
+  --color-on-primary: #ffffff;
+  --color-facade: #4a5552;
+  --color-facade-soft: #e8e8e8;
+  --color-danger: #8a0f06;
+  --color-focus: #000000;
+  --pendente-bg: #fff1bf;
+  --pendente-text: #3a2700;
+  --aprovada-bg: #d3eddf;
+  --aprovada-text: #0a3a25;
+  --rejeitada-bg: #f8d9d5;
+  --rejeitada-text: #6e130b;
+  --cancelada-bg: #e3e6ea;
+  --cancelada-text: #1f2630;
+}
+html[data-theme="dark"][data-a11y-contrast] {
+  --color-bg: #000000;
+  --color-surface: #000000;
+  --color-surface-2: #121212;
+  --color-text: #ffffff;
+  --color-muted: #ffffff;
+  --color-border: #ffffff;
+  --color-border-strong: #ffffff;
+  --color-primary: #8ff0ea;
+  --color-primary-hover: #b4f5f1;
+  --color-primary-strong: #002a2c;
+  --color-primary-soft: #0b2c2d;
+  --color-on-primary: #000000;
+  --color-danger: #ffb3a8;
+  --color-focus: #ffe14d;
+  --pendente-bg: #3a2d10;
+  --pendente-text: #ffe08a;
+  --aprovada-bg: #0d3a27;
+  --aprovada-text: #a6f5d0;
+  --rejeitada-bg: #4a1410;
+  --rejeitada-text: #ffc2ba;
+  --cancelada-bg: #26303a;
+  --cancelada-text: #e3eaf2;
+}
+html[data-a11y-contrast] .hero__photo {
+  filter: contrast(1.1);
+}
+
+/* ---------- destaque de foco: anel grosso em qualquer foco ---------- */
+html[data-a11y-focus] :focus,
+html[data-a11y-focus] :focus-visible {
+  outline: 4px solid #000 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 9px #ffd400 !important;
+  border-radius: 4px;
+}
+
+/* ---------- espaçamento de texto (valores do critério WCAG 1.4.12) ---------- */
+html[data-a11y-spacing] :is(p, li, dd, dt, label, textarea, input, button, .muted) {
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+/* A barra de abas é estreita: espaçamento menor para os nomes caberem. */
+html[data-a11y-spacing] .tabbar li {
+  letter-spacing: 0.04em !important;
+  word-spacing: normal !important;
+  line-height: 1.3 !important;
+}
+html[data-a11y-spacing] p {
+  margin-block-end: 0.6em;
+}
+
+/* ---------- não depender de cor ---------- */
+html[data-a11y-colorsafe] main a:not(.button):not(.date-pill),
+html[data-a11y-colorsafe] footer a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px;
+}
+html[data-a11y-colorsafe] [aria-pressed="true"]::before,
+html[data-a11y-colorsafe] [aria-current="page"]::before {
+  content: "✓ ";
+}
+html[data-a11y-colorsafe] [aria-pressed="true"],
+html[data-a11y-colorsafe] [aria-current] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+html[data-a11y-colorsafe] .badge::before {
+  content: "● ";
+}
+html[data-a11y-colorsafe] .badge--aprovada::before {
+  content: "✓ ";
+}
+html[data-a11y-colorsafe] .badge--rejeitada::before {
+  content: "✕ ";
+}
+html[data-a11y-colorsafe] .badge--cancelada::before {
+  content: "– ";
+}
+html[data-a11y-colorsafe] .badge--pendente::before {
+  content: "… ";
+}
+
+/* ---------- fonte simples ---------- */
+html[data-a11y-font="simple"] {
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html[data-a11y-font="simple"] :is(h1, h2, h3, h4) {
+  font-weight: 700;
+  letter-spacing: 0;
+}
