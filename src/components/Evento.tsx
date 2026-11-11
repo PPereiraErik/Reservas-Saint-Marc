@@ -1,6 +1,6 @@
 import { useMemo, type ReactNode } from "react";
 import { eventoAtual } from "../temas/aplicar";
-import { ARTE } from "../temas/arte";
+import { ARTE, type PecaArte } from "../temas/arte";
 import type { Motivo } from "../temas/eventos";
 import { TEMA_APENAS_ARTE } from "../config";
 
@@ -148,15 +148,15 @@ export function EventoDecor() {
 
 /**
  * Arte do Canva sobre o topo da página (só em telas largas). `esq` fica ao lado do texto,
- * `dir` ao lado da foto; cada peça tem posição em px a partir do canto superior esquerdo do bloco.
+ * `dir` ao lado da foto; cada peça tem posição em px a partir do canto superior esquerdo do bloco ou, com `ancora`, do título, do botão ou das datas.
  */
-export function EventoArte({ lado }: { lado: "esq" | "dir" }) {
+export function EventoArte({ lado, ancora }: { lado: "esq" | "dir"; ancora?: PecaArte["ancora"] }) {
   const ativo = useMemo(eventoAtual, []);
   if (!ativo) return null;
-  const pecas = ARTE[ativo.arte ?? ativo.evento.id]?.filter((p) => p.lado === lado);
+  const pecas = ARTE[ativo.arte ?? ativo.evento.id]?.filter((p) => p.lado === lado && p.ancora === ancora);
   if (!pecas?.length) return null;
   return (
-    <div className="evento-arte" aria-hidden="true">
+    <span className="evento-arte" aria-hidden="true">
       {pecas.map((p) => (
         <img
           key={p.src}
@@ -167,6 +167,6 @@ export function EventoArte({ lado }: { lado: "esq" | "dir" }) {
           style={{ left: p.x, top: p.y, width: p.w, height: p.h }}
         />
       ))}
-    </div>
+    </span>
   );
 }

@@ -9,6 +9,7 @@
   - 5.3: regras do salão com aceite, lista de espera e botões de agenda.
   - 5.4: instalação como aplicativo, datas bloqueadas pela administração e metadados de compartilhamento.
   - 5.4.1 a 5.4.4: janelas que não prendem a tela, voltar ao início, navegação e formulários funcionando em prévias restritas, foto real do salão.
+- **Versão 6.1.2:** enfeites das datas presos ao título, ao botão e às datas, para acompanharem o elemento em qualquer fonte ou tamanho de texto.
 - **Versão 6.1.1:** temas de datas corrigidos: arte alinhada ao desenho em todas as datas, enfeites que espiam atrás das datas e do texto, Natal com uma única arte, sem enfeites soltos em telas menores.
 - **Versão 6.1:** aba de cadastro de moradores por bloco e apartamento (com senha numérica), aba Moradores para a administração, e conta de administrador própria: sem login de demonstração, criada no primeiro acesso no modo local.
 - **Versão 6 (final):** site limpo, sem reservas de exemplo; dados antigos de teste são removidos automaticamente dos navegadores que os tinham; documentação completa, apresentação e README atualizados.

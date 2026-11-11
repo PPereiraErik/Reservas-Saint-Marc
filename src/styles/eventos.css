@@ -339,8 +339,19 @@ html[data-a11y-contrast] .evento-faixa {
     user-select: none;
   }
 
-  /* Peças que espiam por trás do texto, dos botões e das datas. */
+  /* Peças que espiam por trás do texto e das datas (ficam dentro do próprio elemento, abaixo do conteúdo). */
   .evento-arte img.evento-arte__atras {
+    z-index: -1;
+  }
+
+  /* O fantasma do Halloween fica translúcido para não escurecer o título. */
+  .evento-arte img[src$="halloween/p1.webp"] {
+    opacity: 0.5;
+  }
+
+  /* Peças presas ao título, ao botão ou às datas acompanham o elemento, qualquer que seja a fonte. */
+  html[data-arte] .quick-dates__box {
+    position: relative;
     z-index: 0;
   }
 

@@ -5,7 +5,7 @@
  * - Nunca guarda chamadas ao banco de dados (Supabase) nem outros endereços: só o próprio site.
  * Troque VERSAO para forçar a limpeza das cópias antigas.
  */
-const VERSAO = "saint-marc-v4";
+const VERSAO = "saint-marc-v5";
 
 self.addEventListener("install", () => self.skipWaiting());
 

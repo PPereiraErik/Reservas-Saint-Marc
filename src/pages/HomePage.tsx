@@ -30,11 +30,15 @@ export function HomePage() {
       <section className="hero">
         <div className="hero__text">
           <EventoArte lado="esq" />
-          <h1 className="hero__title">Reserve o salão de festas do {CONDOMINIO.nome}</h1>
+          <h1 className="hero__title">
+            Reserve o salão de festas do {CONDOMINIO.nome}
+            <EventoArte lado="esq" ancora="titulo" />
+          </h1>
           <p className="hero__lead">Escolha o dia e o período. Leva menos de dois minutos.</p>
 
           <a href="#/reservar" className="button button--primary button--lg">
             Reservar o salão
+            <EventoArte lado="esq" ancora="botao" />
           </a>
 
           <div className="quick-dates">
@@ -42,6 +46,8 @@ export function HomePage() {
             {state === "loading" ? (
               <p className="muted small">Carregando...</p>
             ) : (
+              <div className="quick-dates__box">
+                <EventoArte lado="esq" ancora="datas" />
               <ul className="quick-dates__list">
                 {livres.map((dia) => (
                   <li key={dia}>
@@ -51,6 +57,7 @@ export function HomePage() {
                   </li>
                 ))}
               </ul>
+              </div>
             )}
           </div>
         </div>

@@ -1,6 +1,6 @@
 {
   "name": "reservas-saint-marc",
-  "version": "6.1.1",
+  "version": "6.1.2",
   "description": "Sistema de reservas do salão de festas do Condomínio Saint-Marc (React + TypeScript + Vite).",
   "private": true,
   "type": "module",

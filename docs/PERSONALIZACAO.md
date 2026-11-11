@@ -23,7 +23,7 @@ Horário de funcionamento e limite de dias seguidos também são validados no ba
 
 ## Temas de datas comemorativas
 
-Os temas são automáticos pela data. Para ver um fora da época, abra o site com `?tema=natal` (ou `ano-novo`, `carnaval`, `pascoa`, `maes`, `junina`, `pais`, `independencia`, `criancas`, `halloween`). `?tema=nenhum` volta ao normal. Segunda versão da Páscoa: `?tema=pascoa2`. O alto contraste e a opção "Decorações" desligam os temas. A arte fica em `public/eventos/` e as posições em `src/temas/arte.ts` (campo `atras: true` faz a peça espiar por trás do texto e das datas); ela aparece a partir de 1184 px de tela; as datas em `src/temas/eventos.ts`.
+Os temas são automáticos pela data. Para ver um fora da época, abra o site com `?tema=natal` (ou `ano-novo`, `carnaval`, `pascoa`, `maes`, `junina`, `pais`, `independencia`, `criancas`, `halloween`). `?tema=nenhum` volta ao normal. Segunda versão da Páscoa: `?tema=pascoa2`. O alto contraste e a opção "Decorações" desligam os temas. A arte fica em `public/eventos/` e as posições em `src/temas/arte.ts` (`atras: true` faz a peça espiar por trás do texto e das datas; `ancora: "titulo" | "botao" | "datas"` prende a peça a esse elemento, e x/y passam a ser medidos a partir dele); ela aparece a partir de 1184 px de tela; as datas em `src/temas/eventos.ts`.
 
 ## Aparência
 
